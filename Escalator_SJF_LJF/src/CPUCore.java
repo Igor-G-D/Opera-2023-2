@@ -9,9 +9,9 @@ public class CPUCore {
         totalProccessingTime = 0;
     }
 
-    public void addProcess(String id, int processingTime) {
-        processes.add(new Process(id, processingTime));
-        totalProccessingTime += processingTime;
+    public void addProcess(Process process) {
+        processes.add(process);
+        totalProccessingTime += process.getProcessExecTime();
         
     }
 
@@ -24,7 +24,7 @@ public class CPUCore {
         String string = "";
         int sum = 0;
         for(int i=0;i<processes.size();i++) {
-            String temp = processes.get(i) + ";" + sum + ";"; 
+            String temp = " "+processes.get(i).getId() + ";" + sum + ";"; 
             sum += processes.get(i).getProcessExecTime();
             temp += sum; // Format: processName;ExecStartTime;ExecEndTime;
             string += temp + "\n";

@@ -17,7 +17,6 @@ public class App {
 
             while(reader.hasNextLine()) {
                 String line = reader.nextLine();
-                System.out.println(line);
                 String[] info = line.split(" "); // splits string based on spaces
                 
                 escalator.addProcess(new Process(info[0], Integer.parseInt(info[1]))); // first part of each line is the ID, second part is the execution time
@@ -28,7 +27,8 @@ public class App {
             e.printStackTrace();
         }
 
-        escalator.execute();
+        escalator.execute(); // runs escalator
+        System.out.println(escalator.toString());
 
     }
 }

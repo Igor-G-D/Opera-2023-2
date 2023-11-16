@@ -16,7 +16,7 @@
             "request": "launch",
             "mainClass": "App",
             "projectName": "Escalator_SJF_LJF_819f33f9",
-            "args": ["src/tasks.txt", "2", "spf"]
+            "args": ["src/tasks.txt", "2", "sjf"]
         }
     ]
 }
