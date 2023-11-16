@@ -2,21 +2,21 @@ import java.util.ArrayList;
 
 public class CPUCore {
     private ArrayList<Process> processes;
+    private int totalProccessingTime;
 
     CPUCore() {
         processes = new ArrayList<Process>();
+        totalProccessingTime = 0;
     }
 
     public void addProcess(String id, int processingTime) {
         processes.add(new Process(id, processingTime));
+        totalProccessingTime += processingTime;
+        
     }
 
-    public int totalProccessingTime() {
-        int sum = 0;
-        for(Process process : processes) { //for each process in processes
-            sum += process.getProcessExecTime();
-        }
-        return sum;
+    public int getTotalProccessingTime() {
+        return totalProccessingTime;
     }
 
     @Override
